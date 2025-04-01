@@ -1,0 +1,93 @@
+Configuração Inicial
+bash
+Copy
+git config --global user.name "Seu Nome"
+git config --global user.email "seu@email.com"
+git config --global core.editor "code --wait"  # Usar VSCode como editor
+git config --list  # Ver todas as configurações
+Iniciar Repositório
+bash
+Copy
+git init  # Inicializa um novo repositório
+git clone <url-repositorio>  # Clona um repositório existente
+Trabalhando com Alterações
+bash
+Copy
+git status  # Verifica o estado dos arquivos
+git add <arquivo>  # Adiciona arquivo específico
+git add .  # Adiciona todos os arquivos modificados
+git reset <arquivo>  # Remove arquivo da área de staging
+git diff  # Mostra diferenças não adicionadas
+git diff --staged  # Mostra diferenças já adicionadas
+git commit -m "mensagem"  # Commita as alterações
+git commit --amend  # Corrige o último commit
+Ramificação (Branching)
+bash
+Copy
+git branch  # Lista todas as branches
+git branch <nome-branch>  # Cria nova branch
+git checkout <nome-branch>  # Muda para outra branch
+git checkout -b <nova-branch>  # Cria e muda para nova branch
+git merge <nome-branch>  # Merge de uma branch na atual
+git branch -d <nome-branch>  # Deleta uma branch
+Histórico e Logs
+bash
+Copy
+git log  # Mostra o histórico
+git log --oneline  # Histórico resumido
+git log --graph  # Histórico com gráfico
+git show <commit-id>  # Mostra alterações de um commit
+Trabalhando com Remotos
+bash
+Copy
+git remote -v  # Lista repositórios remotos
+git remote add <nome> <url>  # Adiciona um remote
+git fetch <remote>  # Baixa alterações sem merge
+git pull <remote> <branch>  # Fetch + merge
+git push <remote> <branch>  # Envia alterações
+git push -u origin <branch>  # Configura upstream
+Desfazendo Coisas
+bash
+Copy
+git restore <arquivo>  # Descarta mudanças não commitadas
+git reset --soft HEAD~1  # Remove commit mas mantém mudanças
+git reset --hard HEAD~1  # Descarta completamente o último commit
+git revert <commit-id>  # Cria novo commit desfazendo outro
+Stashing (Armazenamento temporário)
+bash
+Copy
+git stash  # Guarda alterações temporariamente
+git stash list  # Lista stashes
+git stash apply  # Recupera o último stash
+git stash drop  # Remove o último stash
+Tags
+bash
+Copy
+git tag  # Lista tags
+git tag -a v1.0 -m "Versão 1.0"  # Cria tag anotada
+git push origin --tags  # Envia tags para o remoto
+Limpeza
+bash
+Copy
+git clean -n  # Mostra o que será removido (dry run)
+git clean -f  # Remove arquivos não rastreados
+git gc  # Coleta de lixo (otimiza repositório)
+Dicas Úteis
+bash
+Copy
+git help <comando>  # Ajuda sobre um comando
+git whatchanged  # Mostra histórico com arquivos alterados
+git reflog  # Mostra histórico completo (incluindo ações deletadas)
+git bisect  # Busca binária por commits problemáticos
+Fluxo de Trabalho Típico
+git pull (atualiza do remoto)
+
+Fazer alterações nos arquivos
+
+git add . (prepara as mudanças)
+
+git commit -m "mensagem"
+
+git push (envia para o remoto)
+
+Lembre-se que muitos comandos têm opções adicionais úteis. Você pode sempre usar git help <comando> ou git <comando> --help para ver todas as opções disponíveis.
